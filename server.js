@@ -14,8 +14,8 @@ var Room = require('./app/room.js');
 			//-- Configuration --//
 		   //-------------------//
 
-mongoose.connect(db.url);							// Connection à la DB
-var database = mongoose.connection;
+/*mongoose.connect(db.url);							// Connection à la DB
+var database = mongoose.connection;*/
 
 var app = express(); // Express
 app.use(express.static(__dirname + '/public'));		// Set le répertoire public	
