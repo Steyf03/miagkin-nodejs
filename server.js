@@ -18,9 +18,10 @@ var Room = require('./app/room.js');
 var database = mongoose.connection;*/
 
 var app = express(); // Express
+var port = process.env.PORT || 8080;
 app.use(express.static(__dirname + '/public'));		// Set le répertoire public	
 
-var httpServer = app.listen(1337, '0.0.0.0');		// Création du serveur HTTP
+var httpServer = app.listen(port, '0.0.0.0');		// Création du serveur HTTP
 var io = require('socket.io').listen(httpServer);	// Appel de socket.io et listen
 
 			 //-----------------------------------------//
