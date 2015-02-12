@@ -26,6 +26,7 @@ app.set('port', 1337);
 app.set('ipaddr', "127.0.0.1");
 
 app.use(express.static(__dirname + '/public'));		// Set le répertoire public	
+app.use('/js', express.static(__dirname + '/js'));
 app.get('/', function(req, res) {
   res.render('index.html');
 });
