@@ -1,5 +1,5 @@
 module.exports = {
 
 	// the database url to connect
-	url : 'mongodb://localhost/tests'
+	url : 'mongodb://<Steyf03>:<raleku03>@ds037551.mongolab.com:37551/miagkin';
 }
