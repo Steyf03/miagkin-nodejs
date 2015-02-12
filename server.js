@@ -81,6 +81,33 @@ io.sockets.on('connection', function(socket)
 			me = user;
 			me.id = user.mail.replace('@','-').replace('.','-');
 			// Vérifie que l'user n'est pas déjà dans la base
+			me.avatar = 'https://gravatar.com/avatar/' + crypto.createHash('md5').update(user.mail).digest('hex') + '?s=50';
+			users[me.id] = me;
+			// L'user rejoint la Room (socket.io) générale
+			socket.join('general');
+			socket.emit('logged', me);
+			users[me.id].inRoom = null;
+			console.log("L'utilisateur " + me.username + " s'est connecté !");
+			io.sockets.emit('newusr', me);
+			socket.emit('userInfos', me);
+			io.sockets.emit('usersCount', usersCount);
+			io.sockets.emit('roomsCount', roomsCount);
+			io.sockets.emit('gamesCount', gamesCount);
+			io.sockets.emit('playersCount', playersCount);
+		}
+	})
+
+/*	socket.on('login', function(user)
+	{
+		var tempId = user.mail.replace('@','-').replace('.','-');
+		if(users[tempId] !== undefined){
+			socket.emit('loginError');
+		}
+		else
+		{
+			me = user;
+			me.id = user.mail.replace('@','-').replace('.','-');
+			// Vérifie que l'user n'est pas déjà dans la base
 			userApp.getUser(me, function(temp){
 				if (temp == null){
 					userApp.addUser(me);	
@@ -104,7 +131,7 @@ io.sockets.on('connection', function(socket)
 				io.sockets.emit('playersCount', playersCount);
 			});
 		}
-	})
+	})*/
 
 	/*
 	*	Déconnection d'un utilisateur
