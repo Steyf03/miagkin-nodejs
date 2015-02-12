@@ -30,9 +30,6 @@ app.get('/', function(req, res) {
   res.render('index.html');
 });
 
-var httpServer = app.listen(1337, '0.0.0.0');		// Création du serveur HTTP
-var io = require('socket.io').listen(httpServer);	// Appel de socket.io et listen
-
 			 //-----------------------------------------//
 			//-- Déclaration des variables générales --//
 		   //-----------------------------------------//
