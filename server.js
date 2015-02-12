@@ -14,6 +14,9 @@ var Room = require('./app/room.js');
 			//-- Configuration --//
 		   //-------------------//
 
+mongoose.connect(db.url);							// Connection à la DB
+var database = mongoose.connection;
+
 var app = express(); // Express
 var port = process.env.PORT || 1337;
 var server = require('http').createServer(app).listen(port);
