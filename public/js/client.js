@@ -1,6 +1,6 @@
 (function($){
 
-	var socket = io.connect('https://miagkin.herokuapp.com');
+	var socket = io.connect('http://miagkin.herokuapp.com:80');
 	var msgtpl = $('#msgtpl').html();
 	var lastmsg = false;
 
