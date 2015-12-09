@@ -53,7 +53,7 @@ var history = 2;
 io.sockets.on('connection', function(socket)
 {
 
-	// Déclaration du compteur d'u'tilisateur et log la connection d'utilisateur
+	// Déclaration du compteur d'utilisateur et log la connection d'utilisateur
 	var me = false;
 	usersCount++;
 	console.log("\nNews -> Un utilisateur s'est connecté\nNews -> Utilisateurs connectés: " + usersCount);
